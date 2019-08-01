@@ -70,9 +70,6 @@ public class RepeatedlyReadRequestWrapper extends HttpServletRequestWrapper {
         while ((str = br.readLine()) != null) {
             retStr += str;
         }
-        if (ValidateUtil.validateString(retStr)) {
-            return retStr.getBytes(Charset.forName(encoding));
-        }
-        return null;
+        return retStr.getBytes(Charset.forName(encoding));
     }
 }
